@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">NYCTourGuide</string>
+    <string name="main_activity_label">NYC Tour Guide</string>
 </resources>
