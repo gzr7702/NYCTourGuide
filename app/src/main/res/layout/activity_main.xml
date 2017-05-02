@@ -7,7 +7,7 @@
     tools:context="com.gzr7702.nyctourguide.MainActivity">
 
     <LinearLayout
-        android:layout_width="368dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         tools:layout_editor_absoluteX="8dp"
@@ -28,19 +28,18 @@
 
         <Button
             android:id="@+id/sights_button"
-            android:text="Sights"
-            style="@style/button"/>
+            style="@style/button"
+            android:text="Sights"/>
 
         <Button
             android:id="@+id/entertainment_button"
-            android:background="@color/colorPrimaryDark"
-            android:text="Entertainment"
-            style="@style/button"/>
+            style="@style/button"
+            android:text="Entertainment"/>
 
         <Button
             android:id="@+id/hotel_button"
-            android:text="Hotels"
-            style="@style/button"/>
+            style="@style/button"
+            android:text="Hotels"/>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
 
