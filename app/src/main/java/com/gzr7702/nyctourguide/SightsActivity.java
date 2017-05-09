@@ -13,7 +13,7 @@ import java.util.ArrayList;
  */
 
 public class SightsActivity extends AppCompatActivity {
-    ArrayList<LocationItem> mHotels = new ArrayList<LocationItem>();
+    ArrayList<LocationItem> mSights = new ArrayList<LocationItem>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,17 +21,17 @@ public class SightsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sights);
 
         generateData();
-        ArrayAdapter adapter = new LocationAdapter(this, mHotels);
+        ArrayAdapter adapter = new LocationAdapter(this, mSights);
         final ListView listView = (ListView) findViewById(R.id.sights_list);
         listView.setAdapter(adapter);
     }
 
     private void generateData() {
-        mHotels.add(new LocationItem("Empire State Building", "350 5th Ave", R.drawable.empire_state_real));
-        mHotels.add(new LocationItem("Statue of Liberty", "Liberty Island", R.drawable.liberty));
-        mHotels.add(new LocationItem("Amercian Musuem of Natural History", "Central Park West & 79th St", R.drawable.nat_hist));
-        mHotels.add(new LocationItem("Times Square", "Broadway and 42nd Street", R.drawable.times));
-        mHotels.add(new LocationItem("Metropolitan Museum of Art", "1000 5th Ave", R.drawable.met));
+        mSights.add(new LocationItem("Empire State Building", "350 5th Ave", R.drawable.empire_state_real));
+        mSights.add(new LocationItem("Statue of Liberty", "Liberty Island", R.drawable.liberty));
+        mSights.add(new LocationItem("Amercian Musuem of Natural History", "Central Park West & 79th St", R.drawable.nat_hist));
+        mSights.add(new LocationItem("Times Square", "Broadway and 42nd Street", R.drawable.times));
+        mSights.add(new LocationItem("Metropolitan Museum of Art", "1000 5th Ave", R.drawable.met));
     }
 }
 
