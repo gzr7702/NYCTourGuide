@@ -34,14 +34,14 @@ public class LocationAdapter extends ArrayAdapter<LocationItem> {
         rowView = inflater.inflate(R.layout.locationview_item, parent, false);
 
         ImageView imgView = (ImageView) rowView.findViewById(R.id.icon);
-        TextView nameView = (TextView) rowView.findViewById(R.id.label);
-        TextView areaView = (TextView) rowView.findViewById(R.id.label);
-        TextView addressView = (TextView) rowView.findViewById(R.id.label);
+        TextView nameView = (TextView) rowView.findViewById(R.id.location_name);
+        //TextView areaView = (TextView) rowView.findViewById(R.id.label);
+        TextView addressView = (TextView) rowView.findViewById(R.id.location_address);
 
 
         imgView.setImageResource(locationArrayList.get(position).getImage());
         nameView.setText(locationArrayList.get(position).getName());
-        areaView.setText(locationArrayList.get(position).getArea());
+        //areaView.setText(locationArrayList.get(position).getArea());
         addressView.setText(locationArrayList.get(position).getAddress());
 
         return rowView;

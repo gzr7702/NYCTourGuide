@@ -3,15 +3,22 @@
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent">
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:gravity="center"
-        android:text="Restaurant Text"
+        android:text="Restaurants"
         android:textAlignment="center"
-        android:textSize="18sp"
-        android:textStyle="italic" />
+        android:textSize="24sp"
+        android:textStyle="bold"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"/>
+
     <ListView
         android:id="@+id/restaurant_list"
         android:layout_width="match_parent"

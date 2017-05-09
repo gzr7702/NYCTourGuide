@@ -18,7 +18,6 @@ import java.util.ArrayList;
  */
 
 public class RestaurantActivity extends AppCompatActivity {
-    // TODO: make this a generic activity?
     ArrayList<LocationItem> mRestaurants = new ArrayList<LocationItem>();
 
     @Override
@@ -26,30 +25,18 @@ public class RestaurantActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_restaurant);
 
-        //generateData();
+        generateData();
         ArrayAdapter adapter = new LocationAdapter(this, mRestaurants);
         final ListView listView = (ListView) findViewById(R.id.restaurant_list);
         listView.setAdapter(adapter);
     }
 
-    /*
     private void generateData() {
-        mSongs.add(new SongItem("Song List"));
-        mSongs.add(new SongItem(R.drawable.audio_file, "Stairway to Heaven"));
-        mSongs.add(new SongItem(R.drawable.audio_file, "Let's Dance"));
-        mSongs.add(new SongItem(R.drawable.audio_file, "Master of Puppets"));
-        mSongs.add(new SongItem(R.drawable.audio_file, "Live till You Die"));
-        mSongs.add(new SongItem(R.drawable.audio_file, "Umbrella"));
-        mSongs.add(new SongItem(R.drawable.audio_file, "Rolling in the Deep"));
-        mSongs.add(new SongItem(R.drawable.audio_file, "Just Dance"));
-        mSongs.add(new SongItem(R.drawable.audio_file, "Whiskey in the Jar"));
-        mSongs.add(new SongItem(R.drawable.audio_file, "Mr. Brightside"));
-        mSongs.add(new SongItem(R.drawable.audio_file, "War Pigs"));
-        mSongs.add(new SongItem(R.drawable.audio_file, "Ghost Town"));
-        mSongs.add(new SongItem(R.drawable.audio_file, "Message in a Bottle"));
-        mSongs.add(new SongItem(R.drawable.audio_file, "Billie Jean"));
-        mSongs.add(new SongItem(R.drawable.audio_file, "Bohemian Rhapsody"));
+        mRestaurants.add(new LocationItem("Katz's Deli", "LES", "22 Orchard St", R.drawable.restaurant));
+        mRestaurants.add(new LocationItem("Sal's Pizza", "LES", "40 Orchard St", R.drawable.restaurant));
+        mRestaurants.add(new LocationItem("Nobu", "Tribecca", "195 Broadway", R.drawable.restaurant));
+        mRestaurants.add(new LocationItem("Song' 'e Napule", "Village", "201 Houston St", R.drawable.restaurant));
+        mRestaurants.add(new LocationItem("Spark's Steak House", "Midtown", "210 E 46th Street", R.drawable.restaurant));
     }
-    */
 }
 
