@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">NYCTourGuide</string>
     <string name="main_activity_label">NYC Tour Guide</string>
-    <string name="restaurant_button">Restaurants</string>
-    <string name="sights_button">Sights</string>
-    <string name="entertainment_button">Entertainment</string>
-    <string name="hotels_button">Hotels</string>
+    <string name="restaurant_label">Restaurants</string>
+    <string name="sights_label">Sights</string>
+    <string name="entertainment_label">Entertainment</string>
+    <string name="hotel_label">Hotels</string>
 </resources>

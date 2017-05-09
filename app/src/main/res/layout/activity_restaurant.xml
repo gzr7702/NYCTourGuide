@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:gravity="center"
-        android:text="Restaurants"
+        android:text="@string/restaurant_label"
         android:textAlignment="center"
         android:textSize="24sp"
         android:textStyle="bold"/>

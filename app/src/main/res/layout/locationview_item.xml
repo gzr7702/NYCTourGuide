@@ -28,21 +28,23 @@
                   android:id="@+id/location_name"
                   android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
+                  android:layout_gravity="center_horizontal"
                   android:gravity="center_horizontal"
                   android:padding="10dip"
-                  android:textSize="18sp"
-                  android:textStyle="bold"
-                  android:text="Location Name"/>
+                  android:text="Location Name"
+                  android:textSize="24sp"
+                  android:textStyle="bold"/>
 
         <TextView xmlns:android="http://schemas.android.com/apk/res/android"
                   android:id="@+id/location_address"
                   android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
+                  android:layout_gravity="center_horizontal"
                   android:gravity="center_horizontal"
                   android:padding="10dip"
+                  android:text="Location Address, 22 Park Ave, New York, NY 11211"
                   android:textSize="18sp"
-                  android:textStyle="bold"
-                  android:text="Location Address, 22 Park Ave, New York, NY 11211"/>
+                  android:textStyle="italic"/>
 
     </LinearLayout>
 </LinearLayout>

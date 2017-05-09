@@ -6,13 +6,11 @@ package com.gzr7702.nyctourguide;
 
 class LocationItem {
     private String name;
-    private String area;
     private String address;
     private int image;
 
-    public LocationItem(String name, String area, String address, int image) {
+    public LocationItem(String name, String address, int image) {
         this.name = name;
-        this.area = area;
         this.address = address;
         this.image = image;
     }
@@ -23,14 +21,6 @@ class LocationItem {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getArea() {
-        return area;
-    }
-
-    public void setArea(String area) {
-        this.area = area;
     }
 
     public String getAddress() {
