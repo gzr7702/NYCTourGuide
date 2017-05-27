@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+
 import java.util.ArrayList;
 
 public class LocationAdapter extends ArrayAdapter<LocationItem> {
@@ -23,6 +24,13 @@ public class LocationAdapter extends ArrayAdapter<LocationItem> {
         this.locationArrayList = locationArrayList;
     }
 
+    // Class to use View Holder pattern
+    private class ViewHolder {
+        ImageView imgView;
+        TextView nameView;
+        TextView addressView;
+    }
+
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
@@ -30,17 +38,19 @@ public class LocationAdapter extends ArrayAdapter<LocationItem> {
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
 
+        ViewHolder holder = new ViewHolder();
+
         View rowView = null;
         rowView = inflater.inflate(R.layout.locationview_item, parent, false);
 
-        ImageView imgView = (ImageView) rowView.findViewById(R.id.icon);
-        TextView nameView = (TextView) rowView.findViewById(R.id.location_name);
-        TextView addressView = (TextView) rowView.findViewById(R.id.location_address);
+        holder.imgView = (ImageView) rowView.findViewById(R.id.icon);
+        holder.nameView = (TextView) rowView.findViewById(R.id.location_name);
+        holder.addressView = (TextView) rowView.findViewById(R.id.location_address);
 
 
-        imgView.setImageResource(locationArrayList.get(position).getImage());
-        nameView.setText(locationArrayList.get(position).getName());
-        addressView.setText(locationArrayList.get(position).getAddress());
+        holder.imgView.setImageResource(locationArrayList.get(position).getImage());
+        holder.nameView.setText(locationArrayList.get(position).getName());
+        holder.addressView.setText(locationArrayList.get(position).getAddress());
 
         return rowView;
     }
