@@ -1,5 +1,6 @@
 package com.gzr7702.nyctourguide;
 
+import android.content.res.TypedArray;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
@@ -12,6 +13,7 @@ import java.util.ArrayList;
     This activity displays the music files that are on the device.
  */
 
+@SuppressWarnings("ResourceType")
 public class HotelActivity extends AppCompatActivity {
     ArrayList<LocationItem> mHotels = new ArrayList<LocationItem>();
 
@@ -27,11 +29,20 @@ public class HotelActivity extends AppCompatActivity {
     }
 
     private void generateData() {
-        mHotels.add(new LocationItem("Four Seasons", "27 Barclay St", R.drawable.hotel));
-        mHotels.add(new LocationItem("Holiday Inn", "99 Washington St", R.drawable.hotel));
-        mHotels.add(new LocationItem("La Quinta", "17 W 32nd St", R.drawable.hotel));
-        mHotels.add(new LocationItem("Comfort Inn", "61-63 Chrystie St", R.drawable.hotel));
-        mHotels.add(new LocationItem("Manhattan Broadway Hotel", "273 W 38th St", R.drawable.hotel));
+        TypedArray hotelData= getResources().obtainTypedArray(R.array.hotel_locations);
+        TypedArray itemDef;
+
+        // Iterate through array and get each location array
+        for (int i = 0; i < hotelData.length(); i++) {
+            int resId = hotelData.getResourceId(i, -1);
+            if (resId < 0) {
+                continue;
+            }
+
+            itemDef = getResources().obtainTypedArray(resId);
+            // Create object w/name and address
+            mHotels.add(new LocationItem(itemDef.getString(0),itemDef.getString(1), R.drawable.hotel));
+        }
     }
 }
 

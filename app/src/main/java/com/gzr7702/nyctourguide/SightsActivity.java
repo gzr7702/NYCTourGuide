@@ -1,5 +1,6 @@
 package com.gzr7702.nyctourguide;
 
+import android.content.res.TypedArray;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
@@ -12,6 +13,7 @@ import java.util.ArrayList;
     This activity displays the music files that are on the device.
  */
 
+@SuppressWarnings("ResourceType")
 public class SightsActivity extends AppCompatActivity {
     ArrayList<LocationItem> mSights = new ArrayList<LocationItem>();
 
@@ -27,11 +29,23 @@ public class SightsActivity extends AppCompatActivity {
     }
 
     private void generateData() {
-        mSights.add(new LocationItem("Empire State Building", "350 5th Ave", R.drawable.empire_state_real));
-        mSights.add(new LocationItem("Statue of Liberty", "Liberty Island", R.drawable.liberty));
-        mSights.add(new LocationItem("Amercian Musuem of Natural History", "Central Park West & 79th St", R.drawable.nat_hist));
-        mSights.add(new LocationItem("Times Square", "Broadway and 42nd Street", R.drawable.times));
-        mSights.add(new LocationItem("Metropolitan Museum of Art", "1000 5th Ave", R.drawable.met));
+        TypedArray siteData= getResources().obtainTypedArray(R.array.site_locations);
+        TypedArray itemDef;
+
+        int[] pics = {R.drawable.empire_state_real, R.drawable.liberty, R.drawable.nat_hist,
+                R.drawable.times, R.drawable.met};
+
+        // Iterate through array and get each location array
+        for (int i = 0; i < siteData.length(); i++) {
+            int resId = siteData.getResourceId(i, -1);
+            if (resId < 0) {
+                continue;
+            }
+
+            itemDef = getResources().obtainTypedArray(resId);
+            // Create object w/name and address
+            mSights.add(new LocationItem(itemDef.getString(0),itemDef.getString(1), pics[i]));
+        }
     }
 }
 

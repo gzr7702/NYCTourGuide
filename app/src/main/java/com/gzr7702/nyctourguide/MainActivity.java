@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent);
                 break;
             case R.id.hotel_button:
-                intent = new Intent(getApplicationContext(), EntertainmentActivity.class);
+                intent = new Intent(getApplicationContext(), HotelActivity.class);
                 startActivity(intent);
                 break;
         }

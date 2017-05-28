@@ -15,8 +15,7 @@
         android:id="@+id/icon"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:src="@drawable/android"/>
+        android:layout_weight="1" />
 
     <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -33,8 +32,6 @@
                   android:layout_gravity="center_horizontal"
                   android:gravity="center_horizontal"
                   android:padding="10dip"
-                  android:text="Location Name"
-                  android:textColor="@android:color/background_light"
                   android:textSize="24sp"
                   android:textStyle="bold"/>
 
@@ -45,7 +42,6 @@
                   android:layout_gravity="center_horizontal"
                   android:gravity="center_horizontal"
                   android:padding="10dip"
-                  android:text="Location Address, 22 Park Ave, New York, NY 11211"
                   android:textSize="18sp"
                   android:textStyle="italic"/>
 

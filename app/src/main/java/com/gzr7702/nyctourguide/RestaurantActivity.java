@@ -1,7 +1,9 @@
 package com.gzr7702.nyctourguide;
 
+import android.content.res.TypedArray;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -12,6 +14,7 @@ import java.util.ArrayList;
     This activity displays the music files that are on the device.
  */
 
+@SuppressWarnings("ResourceType")
 public class RestaurantActivity extends AppCompatActivity {
     ArrayList<LocationItem> mRestaurants = new ArrayList<LocationItem>();
 
@@ -27,11 +30,18 @@ public class RestaurantActivity extends AppCompatActivity {
     }
 
     private void generateData() {
-        mRestaurants.add(new LocationItem("Katz's Deli", "22 Orchard St", R.drawable.restaurant));
-        mRestaurants.add(new LocationItem("Sal's Pizza", "40 Orchard St", R.drawable.restaurant));
-        mRestaurants.add(new LocationItem("Nobu", "195 Broadway", R.drawable.restaurant));
-        mRestaurants.add(new LocationItem("Song' 'e Napule", "201 Houston St", R.drawable.restaurant));
-        mRestaurants.add(new LocationItem("Spark's Steak House", "211 E 46th Street", R.drawable.restaurant));
+        TypedArray restaurantData = getResources().obtainTypedArray(R.array.restaurant_locations);
+        TypedArray itemDef;
+
+        for (int i = 0; i < restaurantData.length(); i++) {
+            int resId = restaurantData.getResourceId(i, -1);
+            if (resId < 0) {
+                continue;
+            }
+
+            itemDef = getResources().obtainTypedArray(resId);
+            mRestaurants.add(new LocationItem(itemDef.getString(0),itemDef.getString(1), R.drawable.restaurant));
+        }
     }
 }
 

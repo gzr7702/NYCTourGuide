@@ -1,5 +1,6 @@
 package com.gzr7702.nyctourguide;
 
+import android.content.res.TypedArray;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
@@ -12,6 +13,7 @@ import java.util.ArrayList;
     This activity displays the music files that are on the device.
  */
 
+@SuppressWarnings("ResourceType")
 public class EntertainmentActivity extends AppCompatActivity {
     ArrayList<LocationItem> mEntertainment = new ArrayList<LocationItem>();
 
@@ -27,10 +29,22 @@ public class EntertainmentActivity extends AppCompatActivity {
     }
 
     private void generateData() {
-        mEntertainment.add(new LocationItem("Lincoln Center", "10 Lincoln Center Plaza", R.drawable.lincoln));
-        mEntertainment.add(new LocationItem("Madison Square Garden", "4 Pennsylvania Plaza", R.drawable.msg));
-        mEntertainment.add(new LocationItem("Carnegie Hall", "881 7th Ave", R.drawable.carnegie));
-        mEntertainment.add(new LocationItem("Shubert Theater", "225 W 44th St", R.drawable.shubert));
-        mEntertainment.add(new LocationItem("East Village", "Avenue A and St Mark's Place", R.drawable.ev_bar));
+        // array w/pics
+        int[] pics = {R.drawable.lincoln, R.drawable.msg, R.drawable.carnegie, R.drawable.shubert, R.drawable.ev_bar};
+
+        TypedArray entertainmentData = getResources().obtainTypedArray(R.array.entertainment_locations);
+        TypedArray itemDef;
+
+        // Iterate through array and get each location array
+        for (int i = 0; i < entertainmentData.length(); i++) {
+            int resId = entertainmentData.getResourceId(i, -1);
+            if (resId < 0) {
+                continue;
+            }
+
+            itemDef = getResources().obtainTypedArray(resId);
+            // Create object w/name and address
+            mEntertainment.add(new LocationItem(itemDef.getString(0),itemDef.getString(1), pics[i]));
+        }
     }
 }

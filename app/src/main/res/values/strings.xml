@@ -5,4 +5,117 @@
     <string name="sights_label">Sights</string>
     <string name="entertainment_label">Entertainment</string>
     <string name="hotel_label">Hotels</string>
+
+    <array name="restaurant_locations">
+        <item>@array/katz</item>
+        <item>@array/sal</item>
+        <item>@array/nobu</item>
+        <item>@array/napule</item>
+        <item>@array/spark</item>
+    </array>
+        <array name="katz">
+            <item>Katz\'s Deli</item>
+            <item>22 Orchard St</item>
+        </array>
+        <array name="sal">
+            <item>Sal\'s Pizza</item>
+            <item>40 Orchard St</item>
+        </array>
+        <array name="nobu">
+            <item>Nobu</item>
+            <item>195 Broadway</item>
+        </array>
+        <array name="napule">
+            <item>Song\' \'e Napule</item>
+            <item>201 Houston St</item>
+        </array>
+        <array name="spark">
+            <item>Spark\'s Steakhouse</item>
+            <item>211 E 46th Street</item>
+        </array>
+
+    <array name="hotel_locations">
+        <item>@array/four_seasons</item>
+        <item>@array/holiday_inn</item>
+        <item>@array/la_quinta</item>
+        <item>@array/comfort_inn</item>
+        <item>@array/man_broad_hotel</item>
+    </array>
+        <array name="four_seasons">
+            <item>Four Seasons</item>
+            <item>27 Barclay St</item>
+        </array>
+        <array name="holiday_inn">
+            <item>Holiday Inn</item>
+            <item>99 Washington St</item>
+        </array>
+        <array name="la_quinta">
+            <item>La Quinta</item>
+            <item>17 W 32nd St</item>
+        </array>
+        <array name="comfort_inn">
+            <item>Comfort Inn</item>
+            <item>61-63 Chrystie St</item>
+        </array>
+        <array name="man_broad_hotel">
+            <item>Manhattan Broadway Hotel</item>
+            <item>273 W 38th St</item>
+        </array>
+
+    <array name="entertainment_locations">
+        <item>@array/lincoln</item>
+        <item>@array/msg</item>
+        <item>@array/carnegie</item>
+        <item>@array/shubert</item>
+        <item>@array/e_village</item>
+    </array>
+        <array name="lincoln">
+            <item>Lincoln Center</item>
+            <item>10 Lincoln Center Plaza</item>
+        </array>
+        <array name="msg">
+            <item>Madison Square Garden</item>
+            <item>4 Pennsylvania Plaza</item>
+        </array>
+        <array name="carnegie">
+            <item>Carnegie Hall</item>
+            <item>881 7th Ave</item>
+        </array>
+        <array name="shubert">
+            <item>Shubert Theater</item>
+            <item>225 W 44th St</item>
+        </array>
+        <array name="e_village">
+            <item>East Village</item>
+            <item>Avenue A and St Mark\'s Place</item>
+        </array>
+
+    <array name="site_locations">
+        <item>@array/empire_state</item>
+        <item>@array/stat_liberty</item>
+        <item>@array/museum_nat_his</item>
+        <item>@array/times_square</item>
+        <item>@array/met</item>
+    </array>
+        <array name="empire_state">
+            <item>Empire State Building</item>
+            <item>350 5th Ave</item>
+        </array>
+        <array name="stat_liberty">
+            <item>Statue of Liberty</item>
+            <item>Liberty Island</item>
+        </array>
+        <array name="museum_nat_his">
+            <item>Amercian Musuem of Natural History</item>
+            <item>Central Park West and 79th St</item>
+        </array>
+        <array name="times_square">
+            <item>Times Square</item>
+            <item>Broadway and 42nd Street</item>
+        </array>
+        <array name="met">
+            <item>Metropolitan Museum of Art</item>
+            <item>1000 5th Ave</item>
+        </array>
+
 </resources>
