@@ -34,23 +34,27 @@ public class LocationAdapter extends ArrayAdapter<LocationItem> {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        LayoutInflater inflater = (LayoutInflater) context
-                .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-
-
+        View rowView = null;
         ViewHolder holder = new ViewHolder();
 
-        View rowView = null;
-        rowView = inflater.inflate(R.layout.locationview_item, parent, false);
+        if (rowView == null) {
+            LayoutInflater inflater = (LayoutInflater) context
+                    .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-        holder.imgView = (ImageView) rowView.findViewById(R.id.icon);
-        holder.nameView = (TextView) rowView.findViewById(R.id.location_name);
-        holder.addressView = (TextView) rowView.findViewById(R.id.location_address);
+            rowView = inflater.inflate(R.layout.locationview_item, parent, false);
 
+            holder.imgView = (ImageView) rowView.findViewById(R.id.icon);
+            holder.nameView = (TextView) rowView.findViewById(R.id.location_name);
+            holder.addressView = (TextView) rowView.findViewById(R.id.location_address);
 
-        holder.imgView.setImageResource(locationArrayList.get(position).getImage());
-        holder.nameView.setText(locationArrayList.get(position).getName());
-        holder.addressView.setText(locationArrayList.get(position).getAddress());
+            holder.imgView.setImageResource(locationArrayList.get(position).getImage());
+            holder.nameView.setText(locationArrayList.get(position).getName());
+            holder.addressView.setText(locationArrayList.get(position).getAddress());
+            rowView.setTag(holder);
+
+        } else {
+            holder = (ViewHolder) rowView.getTag();
+        }
 
         return rowView;
     }
